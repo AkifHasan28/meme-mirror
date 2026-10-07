@@ -29,10 +29,25 @@ body {
   gap: 12px;
 }
 
-#webcam {
+/* Wrapper that stacks the canvas on top of the video */
+.camera-wrap {
+  position: relative;
+  width: 100%;
+}
+
+#webcam,
+#overlay {
+  display: block;
   width: 100%;
   border-radius: 12px;
-  transform: scaleX(-1); /* mirror it so it feels like a mirror */
+  transform: scaleX(-1); /* mirror both, so they stay lined up */
+}
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  pointer-events: none; /* clicks pass through */
 }
 
 button {
